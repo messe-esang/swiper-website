@@ -1,12 +1,12 @@
 <h4 id="virtual-example">renderExternal Example</h4><p><code>renderExternal</code> allows to bypass slides rendering to other libraries, and can be super handy with libraries like React.js and Vue.js</p><p>With <b>Vue.js</b></p><pre><code class="html"><pre><code class="html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
   <span class="token comment">&lt;!-- ... --></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>swiper-container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>swiper-wrapper<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>swiper-container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>swiper-wrapper<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
       <span class="token comment">&lt;!-- It is important to set "left" style prop on every slide --></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>swiper-slide<span class="token punctuation">"</span></span>
-        <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>(slide, index) in virtualData.slides<span class="token punctuation">"</span></span>
-        <span class="token attr-name">:key</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>index<span class="token punctuation">"</span></span>
-        <span class="token attr-name">:</span><span class="token style-attr language-css"><span class="token attr-name"><span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token punctuation">{</span><span class="token selector">left: `$</span><span class="token punctuation">{</span>virtualData.offset<span class="token punctuation">}</span>px`<span class="token punctuation">}</span></span><span class="token punctuation">"</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>swiper-slide<span class="token punctuation">"</span></span>
+        <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>(slide, index) in virtualData.slides<span class="token punctuation">"</span></span>
+        <span class="token attr-name">:key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>index<span class="token punctuation">"</span></span>
+        <span class="token attr-name">:style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>{left: `${virtualData.offset}px`}<span class="token punctuation">"</span></span>
       <span class="token punctuation">></span></span>{{slide}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
@@ -19,7 +19,7 @@
     <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
       <span class="token keyword-block">return</span> <span class="token punctuation">{</span>
         <span class="token comment">// dummy slides data</span>
-        slides<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">slides</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
           <span class="token keyword">var</span> slides <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
           <span class="token keyword-block">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">600</span><span class="token punctuation">;</span> i <span class="token operator">+=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
             slides<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">'Slide '</span> <span class="token operator">+</span> <span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -27,8 +27,8 @@
           <span class="token keyword-block">return</span> slides<span class="token punctuation">;</span>
         <span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
         <span class="token comment">// virtual data</span>
-        virtualData<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-          slides<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">virtualData</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token literal-property property">slides</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
         <span class="token punctuation">}</span><span class="token punctuation">,</span>
       <span class="token punctuation">}</span>
     <span class="token punctuation">}</span><span class="token punctuation">,</span>
@@ -36,8 +36,8 @@
       <span class="token keyword">const</span> <span class="token context">self</span> <span class="token operator">=</span> <span class="token context">this</span><span class="token punctuation">;</span>
       <span class="token keyword">const</span> swiper <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Swiper</span><span class="token punctuation">(</span><span class="token string">'.swiper-container'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
         <span class="token comment">// ...</span>
-        virtual<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-          slides<span class="token punctuation">:</span> <span class="token context">self</span><span class="token punctuation">.</span>slides<span class="token punctuation">,</span>
+        <span class="token literal-property property">virtual</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token literal-property property">slides</span><span class="token operator">:</span> <span class="token context">self</span><span class="token punctuation">.</span>slides<span class="token punctuation">,</span>
           <span class="token function">renderExternal</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
             <span class="token comment">// assign virtual slides data</span>
             <span class="token context">self</span><span class="token punctuation">.</span>virtualData <span class="token operator">=</span> data<span class="token punctuation">;</span>
@@ -53,7 +53,7 @@
   <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token context">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span>
       <span class="token comment">// dummy slides data</span>
-      slides<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">slides</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">var</span> slides <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
         <span class="token keyword-block">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">600</span><span class="token punctuation">;</span> i <span class="token operator">+=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
           slides<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">'Slide '</span> <span class="token operator">+</span> <span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -61,8 +61,8 @@
         <span class="token keyword-block">return</span> slides<span class="token punctuation">;</span>
       <span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
       <span class="token comment">// virtual data</span>
-      virtualData<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-        slides<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">virtualData</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">slides</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
       <span class="token punctuation">}</span><span class="token punctuation">,</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
@@ -70,12 +70,12 @@
     <span class="token keyword">const</span> <span class="token context">self</span> <span class="token operator">=</span> <span class="token context">this</span><span class="token punctuation">;</span>
     <span class="token keyword">const</span> swiper <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Swiper</span><span class="token punctuation">(</span><span class="token string">'.swiper-container'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
       <span class="token comment">// ...</span>
-      virtual<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-        slides<span class="token punctuation">:</span> <span class="token context">self</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>slides<span class="token punctuation">,</span>
+      <span class="token literal-property property">virtual</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">slides</span><span class="token operator">:</span> <span class="token context">self</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>slides<span class="token punctuation">,</span>
         <span class="token function">renderExternal</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
           <span class="token comment">// assign virtual slides data</span>
           <span class="token context">self</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-            virtualData<span class="token punctuation">:</span> data<span class="token punctuation">,</span>
+            <span class="token literal-property property">virtualData</span><span class="token operator">:</span> data<span class="token punctuation">,</span>
           <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
       <span class="token punctuation">}</span><span class="token punctuation">,</span>
@@ -89,7 +89,7 @@
         <span class="token punctuation">{</span><span class="token context">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>virtualData<span class="token punctuation">.</span>slides<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">slide<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span>
           <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">"swiper-slide"</span>
             key<span class="token operator">=</span><span class="token punctuation">{</span>index<span class="token punctuation">}</span>
-            style<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span>left<span class="token punctuation">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>virtualData<span class="token punctuation">.</span>offset<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">px</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">}</span><span class="token punctuation">}</span>
+            style<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span><span class="token literal-property property">left</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>virtualData<span class="token punctuation">.</span>offset<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">px</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">}</span><span class="token punctuation">}</span>
           <span class="token operator">></span><span class="token punctuation">{</span>slide<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
         <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
       <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
