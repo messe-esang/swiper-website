@@ -18,7 +18,7 @@ aws s3 sync . s3://esang-mim/docs/swiper-v5     \
     --exclude="package.json"  \
     --exclude="README.md"  \
     --exclude="yarn.lock"  \
-    --exclude=".git"  \
+    --exclude=".git/*"  \
     --exclude="publish.sh"  \
     --acl public-read
 
