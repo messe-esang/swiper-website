@@ -1,0 +1,23 @@
+#!/bin/zsh
+
+# build
+gulp build
+
+# upload
+aws s3 sync . s3://esang-mim/docs/swiper-v5     \
+    --profile=aws_726661123314  \
+    --delete  \
+    --exclude="src/*"  \
+    --exclude="public/*"  \
+    --exclude="node_modules/*"  \
+    --exclude="build/*"  \
+    --exclude=".editorconfig"  \
+    --exclude=".gitignore"  \
+    --exclude="gulpfile.js"  \
+    --exclude="package-lock.json"  \
+    --exclude="package.json"  \
+    --exclude="README.md"  \
+    --exclude="yarn.lock"  \
+    --acl public-read
+
+# 

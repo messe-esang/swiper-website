@@ -18,9 +18,9 @@ html
     meta(name="twitter:title", content=title)
     meta(name="twitter:description", content="Most Modern Mobile Touch Slider")
     meta(name="twitter:image", content="https://swiperjs.com/i/share-banner.png")
-    link(rel="stylesheet", href="/package/css/swiper.min.css")
-    link(rel="stylesheet", href="/css/main.css")
-    link(rel="shortcut icon" href="/i/favicon.png")
+    link(rel="stylesheet", href="/swiper-v5/package/css/swiper.min.css")
+    link(rel="stylesheet", href="/swiper-v5/css/main.css")
+    link(rel="shortcut icon" href="i/favicon.png")
   body
     script.
       (function(){
@@ -34,26 +34,26 @@ html
       .center
         .carbon
           <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=idangerousswiper" id="_carbonads_js"></script>
-        a(href="/").logo
+        a(href="/swiper-v5/").logo
         .title-links
           .title Swiper
           .subtitle Most Modern Mobile Touch Slider
           .links-row
             .links
               - if (activeLink == 'get-started')
-                a(href="/get-started/").active Get Started
+                a(href="/swiper-v5/get-started/").active Get Started
               - else
-                a(href="/get-started/") Get Started
+                a(href="/swiper-v5/get-started/") Get Started
 
               - if (activeLink == 'api')
-                a(href="/api/").active API
+                a(href="/swiper-v5/api/").active API
               - else
-                a(href="/api/") API
+                a(href="/swiper-v5/api/") API
 
               - if (activeLink == 'demos')
-                a(href="/demos/").active Demos
+                a(href="/swiper-v5/demos/").active Demos
               - else
-                a(href="/demos/") Demos
+                a(href="/swiper-v5/demos/") Demos
           .github-buttons
             a(href="https://github.com/nolimits4web/swiper", target="_blank")
               i
@@ -76,19 +76,11 @@ html
         .sponsors
           div(id="bsap_1306029", class="bsarocks bsap_e6fd620d82f1992c9d89ddb5878f795b")
         .links
-          a(href="/") Swiper
-          a(href="/get-started/") Get Started
-          a(href="/api/") API
-          a(href="/demos/") Demos
+          a(href="/swiper-v5/") Swiper
+          a(href="/swiper-v5/get-started/") Get Started
+          a(href="/swiper-v5/api/") API
+          a(href="/swiper-v5/demos/") Demos
         .copy #{new Date().getFullYear()} © Swiper by <a href="https://twitter.com/nolimits4web">Vladimir Kharlampidi</a>
 
-    script(src="/package/js/swiper.min.js")
-    script(src="/js/main.js")
-    script.
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-13289120-5', 'idangero.us');
-      ga('send', 'pageview');
+    script(src="/swiper-v5/package/js/swiper.min.js")
+    script(src="/swiper-v5/js/main.js")

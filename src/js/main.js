@@ -77,7 +77,7 @@ if ($('.demo').length > 0) {
     var t = $(this);
     var demoFile = t.find('iframe').attr('data-src');
     t.find('.demo-link-new-window').attr('href', demoFile);
-    t.find('.demo-link-source').attr('href', 'https://github.com/nolimits4web/Swiper/blob/master/demos/' + demoFile);
+    t.find('.demo-link-source').attr('href', 'https://github.com/nolimits4web/swiper/tree/Swiper5/demos/' + demoFile);
   });
   $(window).on('scroll resize', function () {
     clearTimeout(iframeTimeout);
