@@ -22,4 +22,6 @@ aws s3 sync . s3://esang-mim/docs/swiper-v5     \
     --exclude="publish.sh"  \
     --acl public-read
 
-# 
+# echo
+echo '업로드가 완료되었습니다'
+echo 'CloudFront 콘솔에서 무효화 작업을 잊지 마세요!'
